@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
         console.log(error)
     }
 })
-
+// 회원 가입
 app.post('/signUp', async (req, res) => {
     try {
         const { name, email, password } = res.body
@@ -68,3 +68,21 @@ app.post('/signUp', async (req, res) => {
     }
 })
 
+// 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
+
+const server = http.createServer(app)
+
+const start = async () => {
+    try {
+        server.listen(8000, () => console.log(`Server is listening on 8000`))
+    } catch (err) {
+        console.error(err)
+    }
+}
+
+serverData.initialize()
+    .then(() => {
+        console.log("Data Source has been initialized!")
+    })
+
+start()
